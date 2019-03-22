@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+  app:
+    image: golang:1.8
+    build: .
+    ports:
+      - 3000:3000  
+    volumes:
+      - ../../../github.com/:/go/src/github.com
+    working_dir: /go/src/github.com/tvducmt/Auto-grading
+    command: go run main.go
